@@ -1,0 +1,43 @@
+﻿<h2>User:Karthi/ Admin</h2>
+<form class="form-search">
+    <div class="input-group">
+        <input type="text" ng-model="query" class="form-control" placeholder="Search">
+        <div class="input-group-btn">
+            <button ng-click="reset()" type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+    <button ng-click="query=''; reset()" ng-disabled="!query" type="submit" class="btn btn-default">Reset</button>
+</form>
+
+
+<table class="table table-striped table-condensed table-hover">
+    <thead>
+        <th>
+            <a ng-click="sort('Text')">Todo</a>
+            <span ng-show="sort_order=='Text' && desc==false"><i class="glyphicon glyphicon-sort-by-alphabet"></i></span>
+            <span ng-show="sort_order=='Text' && desc==true"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></span>
+
+        </th>
+        <th><a ng-click="sort('Priority')">Priority</a>
+            <span ng-show="sort_order=='Priority' && desc==false"><i class="glyphicon glyphicon-sort-by-order"></i></span>
+            <span ng-show="sort_order=='Priority' && desc==true"><i class="glyphicon glyphicon-sort-by-order-alt"></i></span>
+        </th>
+        <th><a ng-click="sort('DueDate')">Due</a>
+            <span ng-show="sort_order=='DueDate' && desc==false"><i class="glyphicon glyphicon-sort-by-order"></i></span>
+            <span ng-show="sort_order=='DueDate' && desc==true"><i class="glyphicon glyphicon-sort-by-order-alt"></i></span>
+        </th>
+        <th> <a href="#/new">New Task <i class="glyphicon glyphicon-plus"></i></a> </th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items" id="todo_{{item.ID}}" ng-click="go(ai)">
+            <td>{{item.Text}}</td>
+            <td>{{item.Priority}}</td>
+            <td>{{item.DueDate | date:mediumDate}}</td>
+            <td><a href="#/edit/{{item.ID}}"><i class="glyphicon glyphicon-edit"></i></a> 
+
+                <a ng-click="delete()"><i class="glyphicon glyphicon-remove"></i></a> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a ng-show="more" ng-click="show_more()">Show More ....</a>
