@@ -5,8 +5,24 @@
             when('/new', { controller: CreateCtrl, templateUrl: 'details.html' }).
            when('/edit/:editId', { controller: EditCtrl, templateUrl: 'details.html' }).
             otherwise({ redirectTo: '/' });
+
     });
 
+TodoApp.directive('ngfieldheader', function () {
+    return {
+        restrict: 'A',
+        replace: true,
+        transclude: true,
+        template: '<span><a ng-click="$parent.sort(value)" ng-transclude></a> '
+            + ' <span ng-show="$parent.sort_order==value && $parent.desc==false"><i class="glyphicon glyphicon-arrow-down"></i></span>'
+        + ' <span ng-show="$parent.sort_order==value && $parent.desc==true"><i class="glyphicon glyphicon-arrow-up"></i></span></span>',
+        scope: {
+            value: "@myfield",
+        }
+       
+    }
+});
+-
 
 TodoApp.factory('Todo', function ($resource) {
     return $resource('/api/Todo/:id', { id: '@id' }, { update: { method: 'PUT' } });
@@ -98,3 +114,4 @@ var EditCtrl = function ($scope, $location, $routeParams, Todo) {
 
     };
 };
+

@@ -141,3 +141,4 @@ C:\Users\karthirajp\Documents\GitHub\AngularTutor\AngularTutor\AngularTutor\obj\
 C:\Users\karthirajp\Documents\GitHub\AngularTutor\AngularTutor\AngularTutor\obj\Debug\AngularTutor.csproj.GenerateResource.Cache
 C:\Users\karthirajp\Documents\GitHub\AngularTutor\AngularTutor\AngularTutor\obj\Debug\AngularTutor.dll
 C:\Users\karthirajp\Documents\GitHub\AngularTutor\AngularTutor\AngularTutor\obj\Debug\AngularTutor.pdb
+C:\Users\karthirajp\Documents\GitHub\AngularTutor\AngularTutor\AngularTutor\obj\Debug\AngularTutor.csprojResolveAssemblyReference.cache
